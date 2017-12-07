@@ -6,11 +6,7 @@ import android.os.Bundle
 import android.view.SurfaceHolder
 import kotlinx.android.synthetic.main.activity_main.*
 
-
-
-
 class MainActivity : Activity(){
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -37,6 +33,5 @@ class MainActivity : Activity(){
 
             override fun surfaceDestroyed(holder: SurfaceHolder) {}
         })
-//        holder.addCallback(this@MainActivity)
     }
 }
