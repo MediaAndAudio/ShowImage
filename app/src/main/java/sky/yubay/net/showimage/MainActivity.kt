@@ -4,6 +4,8 @@ import android.app.Activity
 import android.graphics.BitmapFactory
 import android.os.Bundle
 import android.view.SurfaceHolder
+import android.view.View
+import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : Activity(){
@@ -11,8 +13,11 @@ class MainActivity : Activity(){
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        textvew1.text = "imageView显示图片"
         //imageView显示图片
         imageview.setBackgroundResource(R.mipmap.ic_launcher)
+
+        textvew2.text = "sufaceView 显示图片"
         //sufaceView 显示图片
         val holder = surfaceView.holder
         holder.addCallback(object:SurfaceHolder.Callback{
@@ -33,5 +38,12 @@ class MainActivity : Activity(){
 
             override fun surfaceDestroyed(holder: SurfaceHolder) {}
         })
+
+        textvew3.text = "自定义View 显示图片"
+        button.text = "show"
+        button.setOnClickListener(View.OnClickListener {
+            Toast.makeText(this,"Hello, ${textvew3.text}!",Toast.LENGTH_LONG).show()
+        })
+
     }
 }
